@@ -1,4 +1,3 @@
-
 package com.innowise.test.currency.presentation.dialog
 
 import android.app.Dialog
@@ -13,14 +12,12 @@ import com.innowise.test.currencty.databinding.FilterDialogBinding
 
 class FilterDialog(
     context: Context,
-    private val navigateToPriceFilter: () -> Unit,
-    private val navigateToTagFilter: () -> Unit
+    private val navigateToFilter: (FilterType) -> Unit,
 ) : Dialog(context) {
     private lateinit var binding: FilterDialogBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setCancelable(true)
-        this.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         this.window?.addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND)
         setOnCancelListener { dismiss() }
         binding = FilterDialogBinding.inflate(LayoutInflater.from(context))
@@ -29,12 +26,17 @@ class FilterDialog(
             ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
         )
         binding.sortBy.setOnClickListener {
-            navigateToPriceFilter()
+            navigateToFilter(FilterType.EQUIVALENT)
             dismiss()
         }
         binding.tagSort.setOnClickListener {
-            navigateToTagFilter()
+            navigateToFilter(FilterType.TAG)
             dismiss()
         }
     }
+}
+
+enum class FilterType {
+    EQUIVALENT,
+    TAG,
 }

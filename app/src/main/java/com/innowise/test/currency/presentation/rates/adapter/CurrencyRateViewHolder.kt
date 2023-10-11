@@ -22,8 +22,14 @@ class CurrencyRateViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                 .error(R.drawable.ic_launcher_background)
                 .into(imageView)
             tag.text = currencyRate.tag
-            equaivalent.text = currencyRate.equaivalent.toString()
-            balance.text = currencyRate.balance.toString()
+            equaivalent.text =
+                itemView.context.getString(R.string.usd_format, currencyRate.equaivalent.toString())
+            balance.text =
+                itemView.context.getString(
+                    R.string.symbol_format,
+                    currencyRate.balance.toString(),
+                    currencyRate.symbol
+                )
             currencyName.text = currencyRate.symbol
         }
     }

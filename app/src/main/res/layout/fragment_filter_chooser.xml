@@ -1,0 +1,28 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="16dp"
+    tools:context="com.innowise.test.currency.presentation.dialog.FilterChooserFragment">
+
+    <include
+        android:id="@+id/by_tag"
+        layout="@layout/filter_by_tag_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/by_price"
+        layout="@layout/filter_sort_by_equivalent_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_marginTop="16dp"
+        android:id="@+id/accept_button"
+        android:layout_height="wrap_content" />
+
+</FrameLayout>

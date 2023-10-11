@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">ExchangeRates</string>
     <string name="filter_dialog_title">Filter</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sort_by_option">Sort by</string>
+    <string name="by_tag_option">By Tag</string>
+    <string name="price_low_to_high">Price Low to High</string>
+    <string name="price_high_to_low">Price High to Low</string>
+    <string name="trc_20_token">TRC-20</string>
+    <string name="erc_20_token">ERC-20</string>
+    <string name="native_token">Native</string>
+    <string name="usd_format">%1$s USD</string>
+    <string name="symbol_format">%1$s %2$s</string>
 </resources>

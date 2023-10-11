@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/native_token"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:paddingVertical="16dp"
+        android:text="@string/native_token"
+        android:textSize="18sp" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/ecr_token"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:paddingVertical="16dp"
+        android:text="@string/erc_20_token"
+        android:textSize="18sp" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/tcr_token"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:paddingVertical="16dp"
+        android:text="@string/trc_20_token"
+        android:textSize="18sp" />
+</LinearLayout>
