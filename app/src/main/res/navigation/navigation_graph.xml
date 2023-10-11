@@ -8,8 +8,7 @@
     <fragment
         android:id="@+id/id_home_fragment"
         android:name="com.innowise.test.currency.presentation.CurrencyRateFragment"
-        android:label="CurrencyRateFragment"
-        >
+        android:label="CurrencyRateFragment">
         <action
             android:id="@+id/action_id_home_fragment_to_filterChooserFragment2"
             app:destination="@id/filterChooserFragment2" />
@@ -18,7 +17,7 @@
         android:id="@+id/filterChooserFragment2"
         android:name="com.innowise.test.currency.presentation.dialog.FilterChooserFragment"
         android:label="fragment_filter_chooser"
-        tools:layout="@layout/fragment_filter_chooser" >
+        tools:layout="@layout/fragment_filter_chooser">
         <argument
             android:name="filterType"
             app:argType="com.innowise.test.currency.presentation.dialog.FilterType" />

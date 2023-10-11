@@ -6,7 +6,6 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.bumptech.glide.Glide
 import com.innowise.test.currencty.R
 import com.innowise.test.currencty.databinding.ListItemBinding
-import com.innowise.test.currency.di.GlideApp
 import com.innowise.test.currency.domain.CurrencyRateDomainEntity
 
 class CurrencyRateViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -23,7 +22,7 @@ class CurrencyRateViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                 .into(imageView)
             tag.text = currencyRate.tag
             equaivalent.text =
-                itemView.context.getString(R.string.usd_format, currencyRate.equaivalent.toString())
+                itemView.context.getString(R.string.usd_format, currencyRate.equivalent.toString())
             balance.text =
                 itemView.context.getString(
                     R.string.symbol_format,

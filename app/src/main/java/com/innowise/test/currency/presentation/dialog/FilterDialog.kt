@@ -2,8 +2,6 @@ package com.innowise.test.currency.presentation.dialog
 
 import android.app.Dialog
 import android.content.Context
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -14,7 +12,9 @@ class FilterDialog(
     context: Context,
     private val navigateToFilter: (FilterType) -> Unit,
 ) : Dialog(context) {
+
     private lateinit var binding: FilterDialogBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setCancelable(true)

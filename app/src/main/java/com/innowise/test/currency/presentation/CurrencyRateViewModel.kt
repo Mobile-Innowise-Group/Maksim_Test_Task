@@ -23,7 +23,6 @@ class CurrencyRateViewModel @Inject constructor(
     val filteredRates: LiveData<List<CurrencyRateDomainEntity>>
         get() = _filteredRates
     private val _filteredRates by lazyOf(MutableLiveData<List<CurrencyRateDomainEntity>>())
-
     private val disposable: CompositeDisposable by lazyOf(CompositeDisposable())
 
     init {
@@ -49,12 +48,9 @@ class CurrencyRateViewModel @Inject constructor(
 
     fun onFilterApplied(filterState: FilterState) {
         _filteredRates.value = when (filterState) {
-            FilterState.PriceFilterAsc -> rates.sortedBy { it.equaivalent }
-            FilterState.PriceFilterDesc -> rates.sortedByDescending { it.equaivalent }
-            is FilterState.TagFilter ->
-                rates.filter {
-                    it.tag in filterState.tags
-                }
+            FilterState.PriceFilterAsc -> rates.sortedBy { it.equivalent }
+            FilterState.PriceFilterDesc -> rates.sortedByDescending { it.equivalent }
+            is FilterState.TagFilter -> rates.filter { it.tag in filterState.tags }
         }
     }
 
@@ -62,6 +58,4 @@ class CurrencyRateViewModel @Inject constructor(
         super.onCleared()
         disposable.clear()
     }
-
-
 }

@@ -5,8 +5,8 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 sealed class FilterState : Parcelable {
-    object PriceFilterAsc : FilterState()
-    object PriceFilterDesc : FilterState()
+    data object PriceFilterAsc : FilterState()
+    data object PriceFilterDesc : FilterState()
     data class TagFilter(
         val tags: MutableSet<String> = mutableSetOf(
             TokenType.NATIVE.value,

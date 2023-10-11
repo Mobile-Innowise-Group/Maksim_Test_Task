@@ -1,7 +1,5 @@
 package com.innowise.test.currency.data.mock
 
-import com.google.gson.Gson
-
 object FakeResponse {
     val responseBody = """{
     "result": {

@@ -25,8 +25,8 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/accept_button"
         android:layout_width="match_parent"
-        android:text="@string/apply_filter"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:text="@string/apply_filter" />
 
 </LinearLayout>

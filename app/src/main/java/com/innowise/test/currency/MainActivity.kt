@@ -1,12 +1,10 @@
 package com.innowise.test.currency
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.innowise.test.currencty.R
 import com.innowise.test.currencty.databinding.ActivityMainBinding
-import dagger.hilt.EntryPoint
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -18,9 +16,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        val navController = navHostFragment.navController
-
-        binding
     }
 }
