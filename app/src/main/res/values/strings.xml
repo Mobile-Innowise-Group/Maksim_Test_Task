@@ -12,4 +12,5 @@
     <string name="native_token">Native</string>
     <string name="usd_format">%1$s USD</string>
     <string name="symbol_format">%1$s %2$s</string>
+    <string name="apply_filter">apply filter</string>
 </resources>

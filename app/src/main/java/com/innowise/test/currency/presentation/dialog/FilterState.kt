@@ -1,19 +1,23 @@
 package com.innowise.test.currency.presentation.dialog
 
-sealed class FilterState {
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+sealed class FilterState : Parcelable {
     object PriceFilterAsc : FilterState()
     object PriceFilterDesc : FilterState()
     data class TagFilter(
-        val list: List<String> = listOf(
-            TokenType.NATIVE.name,
-            TokenType.ECR_20.name,
-            TokenType.TCR_20.name,
+        val tags: MutableSet<String> = mutableSetOf(
+            TokenType.NATIVE.value,
+            TokenType.ERC_20.value,
+            TokenType.TRC_20.value,
         )
     ) : FilterState()
 }
 
-enum class TokenType {
-    NATIVE,
-    ECR_20,
-    TCR_20,
+enum class TokenType(val value: String) {
+    NATIVE("Native"),
+    ERC_20("ERC-20"),
+    TRC_20("TRC-20"),
 }

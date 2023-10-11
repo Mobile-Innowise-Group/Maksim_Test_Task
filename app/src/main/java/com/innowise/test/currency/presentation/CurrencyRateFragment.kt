@@ -12,6 +12,7 @@ import com.innowise.test.currencty.R
 import com.innowise.test.currencty.databinding.FragmentCurrencyRatesBinding
 import com.innowise.test.currency.utils.Constants
 import com.innowise.test.currency.presentation.dialog.FilterDialog
+import com.innowise.test.currency.presentation.dialog.FilterState
 import com.innowise.test.currency.presentation.rates.adapter.CurrencyRatesAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -30,11 +31,12 @@ class CurrencyRateFragment : Fragment(R.layout.fragment_currency_rates) {
             recycler.adapter = adapter
             recycler.layoutManager = LinearLayoutManager(requireContext())
 
-            viewModel.rates.observe(viewLifecycleOwner) { rates ->
+            viewModel.filteredRates.observe(viewLifecycleOwner) { rates ->
                 adapter.submitList(rates)
             }
             setFragmentResultListener(Constants.requestCode) { requestKey, bundle ->
-
+                val result = bundle.getParcelable<FilterState>(Constants.resultKey)
+                viewModel.onFilterApplied(result ?: FilterState.PriceFilterAsc)
             }
             filterFab.setOnClickListener {
                 FilterDialog(requireContext()) { filterType ->
